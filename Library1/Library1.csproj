@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D354D880-42FE-438C-8765-DBE6B0C06C22}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleDI</RootNamespace>
-    <AssemblyName>ConsoleDI</AssemblyName>
+    <ProjectGuid>{30DB4E7E-1481-4AB3-9C2D-3969ED876FC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Library1</RootNamespace>
+    <AssemblyName>Library1</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,19 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FactoryClass.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="HelpersInterfaces\IStringWriter.cs" />
+    <Compile Include="HelpersInterfaces\INumberWriter.cs" />
+    <Compile Include="Helpers\NumberWriter.cs" />
+    <Compile Include="Helpers\StringWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkersInterfaces\IDateWriter.cs" />
+    <Compile Include="WorkersInterfaces\ISpecialWorker.cs" />
+    <Compile Include="WorkersInterfaces\IWorker.cs" />
+    <Compile Include="Workers\DateWriter.cs" />
+    <Compile Include="Workers\SpecialWorker.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Library1\Library1.csproj">
-      <Project>{30db4e7e-1481-4ab3-9c2d-3969ed876fc1}</Project>
-      <Name>Library1</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
